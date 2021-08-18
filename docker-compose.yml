@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/spree_app
+      - bundler-data:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    command: bundle exec rails s -p 3000
+volumes:
+  bundler-data:
+
+
+
